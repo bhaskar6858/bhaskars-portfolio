@@ -92,8 +92,8 @@ const CustomCursor: React.FC = () => {
             left: `${trail.x}px`,
             top: `${trail.y}px`,
             opacity: (trails.length - index) / trails.length * 0.4,
-            width: `${4 + (trails.length - index) / trails.length * 4}px`,
-            height: `${4 + (trails.length - index) / trails.length * 4}px`,
+            width: `${7 + (trails.length - index) / trails.length * 7}px`, // Increased from 4 to 7 for thicker trail
+            height: `${7 + (trails.length - index) / trails.length * 7}px`, // Increased from 4 to 7 for thicker trail
             backgroundColor: skyBlue,
             borderRadius: '50%',
             position: 'fixed',
