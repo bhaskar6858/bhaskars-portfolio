@@ -21,15 +21,8 @@ const CustomCursor: React.FC = () => {
   const [trailId, setTrailId] = useState(0);
   const [particleId, setParticleId] = useState(0);
   
-  // Enhanced colors for a more whimsical feel
-  const colors = [
-    '#9b87f5', // Primary Purple
-    '#7E69AB', // Secondary Purple
-    '#D6BCFA', // Light Purple
-    '#8B5CF6', // Vivid Purple
-    '#D946EF', // Magenta Pink
-    '#33C3F0'  // Sky Blue
-  ];
+  // Sky blue color for stars
+  const skyBlue = '#33C3F0';
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
@@ -45,12 +38,12 @@ const CustomCursor: React.FC = () => {
       setClicked(true);
       setTimeout(() => setClicked(false), 500);
       
-      // Create star particles on click
+      // Create star particles on click - all sky blue
       const newParticles: ParticleType[] = [];
-      for (let i = 0; i < 12; i++) { // More particles for a more dramatic effect
+      for (let i = 0; i < 15; i++) { // More stars
         const angle = Math.random() * Math.PI * 2;
-        const speed = 50 + Math.random() * 80;
-        const size = 5 + Math.random() * 15; // Larger size range
+        const speed = 40 + Math.random() * 100; // Varied speed for better spread
+        const size = 4 + Math.random() * 12; // Smaller size range for small stars
         const rotation = Math.random() * 360; // Random rotation
         
         newParticles.push({
@@ -58,9 +51,9 @@ const CustomCursor: React.FC = () => {
           x: e.clientX,
           y: e.clientY,
           size,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          color: skyBlue, // All stars are sky blue
           tx: Math.cos(angle) * speed,
-          ty: Math.sin(angle) * speed,
+          ty: Math.sin(angle) * speed + 30, // Add gravity effect by making them fall downward
           rotation
         });
       }
@@ -81,7 +74,7 @@ const CustomCursor: React.FC = () => {
       window.removeEventListener('mousemove', updatePosition);
       window.removeEventListener('click', handleClick);
     };
-  }, [trailId, particleId]);
+  }, [trailId, particleId, skyBlue]);
 
   // Don't render cursor effects on touch devices
   if ('ontouchstart' in window) {
@@ -90,29 +83,6 @@ const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Main cursor dot - more subtle and elegant */}
-      <div 
-        className="cursor-dot w-10 h-10 bg-transparent border-2 border-primary/25 rounded-full"
-        style={{ 
-          left: `${position.x}px`, 
-          top: `${position.y}px`, 
-          transform: `translate(-50%, -50%) scale(${clicked ? 0.8 : 1})`,
-          transition: 'transform 0.15s ease-out, opacity 0.2s ease-out',
-          opacity: 0.9
-        }}
-      />
-      
-      {/* Small cursor core */}
-      <div 
-        className="cursor-dot w-2.5 h-2.5 bg-primary/70 rounded-full"
-        style={{ 
-          left: `${position.x}px`, 
-          top: `${position.y}px`,
-          transform: 'translate(-50%, -50%)',
-          boxShadow: '0 0 12px rgba(155, 135, 245, 0.6)' 
-        }}
-      />
-      
       {/* Comet-like cursor trail */}
       {trails.map((trail, index) => (
         <div
@@ -124,7 +94,7 @@ const CustomCursor: React.FC = () => {
             opacity: (trails.length - index) / trails.length * 0.4,
             width: `${4 + (trails.length - index) / trails.length * 4}px`,
             height: `${4 + (trails.length - index) / trails.length * 4}px`,
-            backgroundColor: colors[index % colors.length],
+            backgroundColor: skyBlue,
             borderRadius: '50%',
             position: 'fixed',
             transform: 'translate(-50%, -50%)',

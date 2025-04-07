@@ -141,7 +141,7 @@
   }
   
   /* Custom cursor styles */
-  .cursor-dot {
+  .cursor-trail {
     pointer-events: none;
     z-index: 9999;
     border-radius: 50%;
@@ -178,7 +178,7 @@
     touch-action: pan-y;
   }
   
-  /* Star particle animation */
+  /* Star particle animation - modified for gravity effect */
   @keyframes star-particle {
     0% {
       transform: translate(-50%, -50%) rotate(0deg) scale(0.2);
