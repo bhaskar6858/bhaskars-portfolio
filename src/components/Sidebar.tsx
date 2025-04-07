@@ -26,7 +26,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon: Icon, label, href, active }) =>
 };
 
 const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true); // Set to true initially to show sidebar by default
   const [activeSection, setActiveSection] = useState('home');
   
   const toggleSidebar = () => setIsOpen(!isOpen);
@@ -49,7 +49,6 @@ const Sidebar: React.FC = () => {
       }));
       
       for (let i = sections.length - 1; i >= 0; i--) {
-        // Adjust the threshold as needed (added a small buffer)
         if (scrollPosition >= sections[i].offset - 200) {
           setActiveSection(sections[i].id);
           break;
@@ -63,9 +62,9 @@ const Sidebar: React.FC = () => {
   
   return (
     <>
-      {/* Mobile menu button */}
+      {/* Mobile menu button - always visible on mobile */}
       <button 
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border"
+        className="fixed top-4 left-4 z-50 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border"
         onClick={toggleSidebar}
         aria-label="Toggle menu"
       >
@@ -74,7 +73,7 @@ const Sidebar: React.FC = () => {
       
       {/* Sidebar */}
       <aside 
-        className={`fixed top-0 left-0 h-screen w-64 bg-background border-r border-border z-40 transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed top-0 left-0 h-screen w-64 bg-background border-r border-border z-40 transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -107,7 +106,7 @@ const Sidebar: React.FC = () => {
         </div>
       </aside>
       
-      {/* Backdrop for mobile */}
+      {/* Backdrop for mobile - only shows when sidebar is open */}
       {isOpen && (
         <div 
           className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-30"

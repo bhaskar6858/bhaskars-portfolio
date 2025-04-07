@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Resume from '../components/Resume';
@@ -8,6 +8,8 @@ import Sidebar from '../components/Sidebar';
 import CustomCursor from '../components/CustomCursor';
 
 const Index: React.FC = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  
   // Add a class to the body to enable the content area styling
   useEffect(() => {
     document.body.classList.add('has-sidebar');
@@ -18,7 +20,7 @@ const Index: React.FC = () => {
   }, []);
   
   return (
-    <div className="flex">
+    <div className="flex min-h-screen">
       {/* Custom cursor */}
       <CustomCursor />
       
@@ -26,7 +28,7 @@ const Index: React.FC = () => {
       <Sidebar />
       
       {/* Main content */}
-      <main className="w-full content-area">
+      <main className={`w-full transition-all duration-300 ${sidebarOpen ? 'lg:ml-64' : 'ml-0'}`}>
         <Hero />
         <Projects />
         <Resume />
