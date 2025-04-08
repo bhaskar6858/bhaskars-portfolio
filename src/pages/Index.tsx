@@ -6,10 +6,10 @@ import Resume from '../components/Resume';
 import Contact from '../components/Contact';
 import Sidebar from '../components/Sidebar';
 import CustomCursor from '../components/CustomCursor';
-import { useSidebar } from '../components/ui/sidebar';
+import { SidebarProvider, useSidebar } from '../components/ui/sidebar';
 
-const Index: React.FC = () => {
-  const { state } = useSidebar(); // Using the useSidebar hook to get the current state
+const MainContent = () => {
+  const { state } = useSidebar(); // Now this is safely within SidebarProvider
   
   // Add a class to the body to enable the content area styling
   useEffect(() => {
@@ -36,6 +36,14 @@ const Index: React.FC = () => {
         <Contact />
       </main>
     </div>
+  );
+};
+
+const Index: React.FC = () => {
+  return (
+    <SidebarProvider>
+      <MainContent />
+    </SidebarProvider>
   );
 };
 
