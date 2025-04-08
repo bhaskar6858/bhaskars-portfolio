@@ -2,6 +2,7 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { ArrowDownCircle } from 'lucide-react';
+import { AspectRatio } from './ui/aspect-ratio';
 
 const Hero: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -40,15 +41,17 @@ const Hero: React.FC = () => {
           </div>
         </div>
         
-        {/* Image */}
+        {/* Portrait Image - using AspectRatio to make it portrait */}
         <div className={`perspective ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-          <div className="relative w-full h-[500px] preserve-3d animate-float rounded-2xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
-              alt="Portrait" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+          <div className="relative w-full max-w-md mx-auto preserve-3d animate-float rounded-2xl overflow-hidden shadow-2xl">
+            <AspectRatio ratio={3/4} className="bg-muted">
+              <img 
+                src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b" 
+                alt="Portrait" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+            </AspectRatio>
           </div>
         </div>
       </div>
