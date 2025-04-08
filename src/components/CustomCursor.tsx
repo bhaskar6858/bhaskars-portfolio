@@ -24,6 +24,32 @@ const CustomCursor: React.FC = () => {
   // Sky blue color for stars
   const skyBlue = '#33C3F0';
 
+  // Add the keyframe animation styles to the document head
+  useEffect(() => {
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+      @keyframes star-particle {
+        0% {
+          transform: translate(-50%, -50%) rotate(${Math.random() * 360}deg) scale(0.2);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+          transform: translate(-50%, -50%) rotate(${Math.random() * 360}deg) scale(1);
+        }
+        100% {
+          transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) rotate(${Math.random() * 720}deg) scale(0.5);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+    
+    return () => {
+      document.head.removeChild(styleSheet);
+    };
+  }, []);
+
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -137,38 +163,21 @@ const CustomCursor: React.FC = () => {
             zIndex: 9997,
             transform: `translate(-50%, -50%) rotate(${particle.rotation}deg)`,
             animation: 'star-particle 2s ease-out forwards', // Longer animation
-            opacity: 1
-          }}
+            opacity: 1,
+            '--tx': `${particle.tx}px`,
+            '--ty': `${particle.ty}px`
+          } as React.CSSProperties}
         >
           <Star 
             size={particle.size} 
             color={particle.color} 
             fill={particle.color} 
             style={{
-              filter: `drop-shadow(0 0 6px ${particle.color})`, // More glow
-              '--tx': `${particle.tx}px`,
-              '--ty': `${particle.ty}px`
-            } as React.CSSProperties}
+              filter: `drop-shadow(0 0 6px ${particle.color})` // More glow
+            }}
           />
         </div>
       ))}
-
-      <style jsx>{`
-        @keyframes star-particle {
-          0% {
-            transform: translate(-50%, -50%) rotate(${Math.random() * 360}deg) scale(0.2);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-            transform: translate(-50%, -50%) rotate(${Math.random() * 360}deg) scale(1);
-          }
-          100% {
-            transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) rotate(${Math.random() * 720}deg) scale(0.5);
-            opacity: 0;
-          }
-        }
-      `}</style>
     </>
   );
 };
