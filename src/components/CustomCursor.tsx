@@ -142,7 +142,7 @@ const CustomCursor: React.FC = () => {
               width: `${7 + (trails.length - index) / trails.length * 7}px`,
               height: `${7 + (trails.length - index) / trails.length * 7}px`,
               // Apply gradient color based on position in trail
-              backgroundColor: blendRatio < 0.5 
+              background: blendRatio < 0.5 
                 ? lightPurple 
                 : skyBlue,
               borderRadius: '50%',

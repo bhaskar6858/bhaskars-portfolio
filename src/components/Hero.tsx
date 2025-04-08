@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         <div className={`${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
             Hello, I'm <br />
-            <span className="bg-gradient-to-r from-purple-600 to-blue-500 clip-text text-transparent font-bold">Your Name</span>
+            <span className="bg-gradient-to-r from-[#8A65DF] to-[#33C3F0] clip-text text-transparent font-bold">Your Name</span>
           </h1>
           
           <p className="mt-6 text-xl text-muted-foreground max-w-md text-balance">
