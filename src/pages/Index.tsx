@@ -6,9 +6,10 @@ import Resume from '../components/Resume';
 import Contact from '../components/Contact';
 import Sidebar from '../components/Sidebar';
 import CustomCursor from '../components/CustomCursor';
+import { useSidebar } from '../components/ui/sidebar';
 
 const Index: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const { state } = useSidebar(); // Using the useSidebar hook to get the current state
   
   // Add a class to the body to enable the content area styling
   useEffect(() => {
@@ -27,8 +28,8 @@ const Index: React.FC = () => {
       {/* Sidebar */}
       <Sidebar />
       
-      {/* Main content */}
-      <main className={`w-full transition-all duration-300 ${sidebarOpen ? 'lg:ml-64' : 'ml-0'}`}>
+      {/* Main content - full width when sidebar is collapsed */}
+      <main className={`w-full transition-all duration-300 ${state === 'expanded' ? 'lg:ml-64' : 'ml-0'}`}>
         <Hero />
         <Projects />
         <Resume />
