@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { Briefcase, GraduationCap, Award, Download } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, ExternalLink } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Resume: React.FC = () => {
   const { ref: experienceRef, isVisible: experienceVisible } = useScrollAnimation(0.1);
@@ -11,21 +12,23 @@ const Resume: React.FC = () => {
   return (
     <section id="resume" className="py-20">
       <div className="container px-4 lg:px-8 mx-auto">
-        <div className="flex justify-between items-center mb-12">
-          <div>
+        <div className="flex flex-col items-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Resume</h2>
             <p className="text-muted-foreground max-w-2xl">
               My professional journey, skills, and qualifications.
             </p>
           </div>
           
-          <a 
-            href="#"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+          <Button 
+            asChild
+            className="inline-flex items-center gap-2 px-8 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
-            <Download size={16} />
-            <span>Download CV</span>
-          </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <ExternalLink size={16} />
+              <span>View Full CV</span>
+            </a>
+          </Button>
         </div>
         
         <div className="grid md:grid-cols-2 gap-10">
