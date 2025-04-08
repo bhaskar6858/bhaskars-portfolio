@@ -95,7 +95,14 @@ export default {
 				'particle': {
 					'0%': { transform: 'translate(0, 0) scale(1)', opacity: '1' },
 					'100%': { transform: 'translate(var(--tx), var(--ty)) scale(0)', opacity: '0' }
-				}
+				},
+
+				'fade-in-scale': {
+					'0%': { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
+					'100%': { opacity: '1', transform: 'scale(1) translateY(0)' }
+				},
+
+
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -105,9 +112,12 @@ export default {
 				'scale-in': 'scale-in 0.7s ease-out forwards',
 				'float': 'float 6s ease-in-out infinite',
 				'cursor-trail': 'cursor-trail 0.8s ease-out forwards',
-				'particle': 'particle 1s ease-out forwards'
+				'particle': 'particle 1s ease-out forwards',
+				'fade-in-scale': 'fade-in-scale 0.8s ease-out forwards'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
+
+
 } satisfies Config;

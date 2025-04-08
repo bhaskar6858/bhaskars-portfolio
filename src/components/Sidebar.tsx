@@ -93,8 +93,9 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
         <div className="flex flex-col h-full p-6">
           {/* Logo/Brand */}
           <div className="mb-10">
+            <br/> <br/>
             <h2 className="text-xl font-bold">Portfolio</h2>
-            <p className="text-sm text-muted-foreground">Developer & Designer</p>
+            <p className="text-sm text-muted-foreground">Aspiring ML Engineer</p>
           </div>
           
           {/* Nav items */}
@@ -113,7 +114,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
           {/* Bottom content */}
           <div className="mt-auto pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Portfolio
+              &copy; {new Date().getFullYear()} .All rights reserved.
             </p>
           </div>
         </div>

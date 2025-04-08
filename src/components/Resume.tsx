@@ -23,7 +23,7 @@ const Resume: React.FC = () => {
             asChild
             className="inline-flex items-center gap-2 px-8 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="/Bhaskar Singh Resume.pdf" target="_blank" rel="noopener noreferrer">
               <ExternalLink size={16} />
               <span>View Full CV</span>
             </a>
@@ -48,14 +48,16 @@ const Resume: React.FC = () => {
                 
                 <div className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
                   <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                    <h4 className="font-bold">B.Tech Computer Science and Engineering</h4>
+                    <h4 className="font-bold">B.Tech Computer Science and Engineering with specialiazation in AI & ML</h4>
                     <span className="text-sm px-2 py-1 bg-secondary text-secondary-foreground rounded-full">
-                      2020 - 2024
+                      2022-2026
                     </span>
                   </div>
-                  <h5 className="text-sm text-muted-foreground mb-3">University Name</h5>
+                  <h2 className="text-sm text-muted-foreground mb-3">Graphic Era Deemed to be University, Dehradun, Uttarakhand</h2>
+                  <h2 className="text-sm text-muted-foreground mb-3">8.2 CGPA</h2>
                   <p className="text-muted-foreground">
-                    Specialization in Artificial Intelligence and Machine Learning. Coursework in data structures, algorithms, machine learning, and software engineering.
+                   
+
                   </p>
                 </div>
               </div>
@@ -76,10 +78,10 @@ const Resume: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              "JavaScript", "TypeScript", "React", "Node.js",
-              "HTML5", "CSS3", "Tailwind CSS", "Redux",
-              "Python", "TensorFlow", "PyTorch", "Machine Learning",
-              "Git", "Docker", "AWS", "UI/UX Design"
+              "Java", "Python", "C", "OOP's",
+              "Artificial Intellifence", "Machine Learning", "Deep Learning", "MLOPS",
+              "Scikit Learn", "TensorFlow", "PyTorch", "MySQL",
+              "Git", "AWS", "HTML5", "CSS"
             ].map((skill) => (
               <div 
                 key={skill}
