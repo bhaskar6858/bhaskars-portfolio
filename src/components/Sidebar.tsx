@@ -9,6 +9,10 @@ interface NavItemProps {
   active: boolean;
 }
 
+interface SidebarProps {
+  onStateChange?: (state: 'expanded' | 'collapsed') => void;
+}
+
 const NavItem: React.FC<NavItemProps> = ({ icon: Icon, label, href, active }) => {
   return (
     <a 
@@ -25,12 +29,20 @@ const NavItem: React.FC<NavItemProps> = ({ icon: Icon, label, href, active }) =>
   );
 };
 
-// This component doesn't use useSidebar anymore, it manages its own state
-const Sidebar: React.FC = () => {
+// This component manages its own state
+const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
   const [isOpen, setIsOpen] = useState(true); // Set to true initially to show sidebar by default
   const [activeSection, setActiveSection] = useState('home');
   
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  const toggleSidebar = () => {
+    const newState = !isOpen;
+    setIsOpen(newState);
+    
+    // Notify parent component of state change
+    if (onStateChange) {
+      onStateChange(newState ? 'expanded' : 'collapsed');
+    }
+  };
   
   const navItems = [
     { icon: Home, label: 'Home', href: '#home', id: 'home' },

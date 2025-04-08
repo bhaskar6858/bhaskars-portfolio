@@ -6,9 +6,8 @@ import Resume from '../components/Resume';
 import Contact from '../components/Contact';
 import Sidebar from '../components/Sidebar';
 import CustomCursor from '../components/CustomCursor';
-import { SidebarProvider } from '../components/ui/sidebar';
 
-// This component doesn't use useSidebar since we've modified Sidebar.tsx to manage its own state
+// This component doesn't use SidebarProvider since Sidebar manages its own state
 const Index: React.FC = () => {
   const [sidebarState, setSidebarState] = useState<'expanded' | 'collapsed'>('expanded');
   
@@ -21,16 +20,21 @@ const Index: React.FC = () => {
     };
   }, []);
   
+  // Function to handle sidebar state changes
+  const handleSidebarStateChange = (state: 'expanded' | 'collapsed') => {
+    setSidebarState(state);
+  };
+  
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen w-full">
       {/* Custom cursor */}
       <CustomCursor />
       
-      {/* Sidebar */}
-      <Sidebar />
+      {/* Sidebar with state change callback */}
+      <Sidebar onStateChange={handleSidebarStateChange} />
       
       {/* Main content - full width when sidebar is collapsed */}
-      <main className={`w-full transition-all duration-300 ${sidebarState === 'expanded' ? 'lg:ml-64' : 'ml-0'}`}>
+      <main className={`flex-1 transition-all duration-300 ${sidebarState === 'expanded' ? 'lg:ml-64' : 'ml-0'}`}>
         <Hero />
         <Projects />
         <Resume />

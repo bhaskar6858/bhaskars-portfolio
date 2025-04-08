@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         <div className={`${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance">
             Hello, I'm <br />
-            <span className="bg-gradient-to-r from-primary to-primary/70 clip-text text-transparent">Your Name</span>
+            <span className="bg-gradient-to-r from-[#D6BCFA] to-[#33C3F0] clip-text text-transparent">Your Name</span>
           </h1>
           
           <p className="mt-6 text-xl text-muted-foreground max-w-md text-balance">
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
         aria-label="Scroll down"
       >
-        <ArrowDownCircle className="text-primary/60" />
+        <ArrowDownCircle className="text-[#33C3F0] hover:text-[#D6BCFA] transition-colors" />
       </a>
     </section>
   );

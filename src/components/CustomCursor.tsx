@@ -21,7 +21,8 @@ const CustomCursor: React.FC = () => {
   const [trailId, setTrailId] = useState(0);
   const [particleId, setParticleId] = useState(0);
   
-  // Sky blue color for stars
+  // New gradient colors for comet trail (light purple and sky blue)
+  const lightPurple = '#D6BCFA';
   const skyBlue = '#33C3F0';
 
   // Add the keyframe animation styles to the document head
@@ -82,7 +83,7 @@ const CustomCursor: React.FC = () => {
           x: e.clientX,
           y: e.clientY,
           size,
-          color: skyBlue, // All stars are sky blue
+          color: skyBlue, // Keep stars sky blue as requested
           tx: Math.cos(angle) * speed,
           ty: Math.sin(angle) * speed + 40, // Add stronger gravity effect for downward spread
           rotation
@@ -123,10 +124,13 @@ const CustomCursor: React.FC = () => {
 
   return (
     <>
-      {/* Comet-like cursor trail */}
+      {/* Comet-like cursor trail with gradient from light purple to sky blue */}
       {trails.map((trail, index) => {
         // Calculate how old this trail point is (0 = new, 1 = old)
         const age = (Date.now() - trail.createdAt) / 800;
+        // Calculate blend ratio for gradient based on trail position
+        const blendRatio = index / trails.length;
+        
         return (
           <div
             key={trail.id}
@@ -137,7 +141,10 @@ const CustomCursor: React.FC = () => {
               opacity: Math.max(0, 0.4 - age * 0.4), // Fade out based on age
               width: `${7 + (trails.length - index) / trails.length * 7}px`,
               height: `${7 + (trails.length - index) / trails.length * 7}px`,
-              backgroundColor: skyBlue,
+              // Apply gradient color based on position in trail
+              backgroundColor: blendRatio < 0.5 
+                ? lightPurple 
+                : skyBlue,
               borderRadius: '50%',
               position: 'fixed',
               transform: 'translate(-50%, -50%)',
