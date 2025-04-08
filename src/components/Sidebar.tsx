@@ -25,6 +25,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon: Icon, label, href, active }) =>
   );
 };
 
+// This component doesn't use useSidebar anymore, it manages its own state
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true); // Set to true initially to show sidebar by default
   const [activeSection, setActiveSection] = useState('home');
