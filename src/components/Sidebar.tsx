@@ -91,6 +91,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
         <div className="flex flex-col h-full p-6">
           {/* Logo/Brand */}
           <div className="mb-10">
+            <br/> <br/>
             <h2 className="text-xl font-bold">Portfolio</h2>
             <p className="text-sm text-muted-foreground">Aspiring ML Engineer</p>
           </div>
