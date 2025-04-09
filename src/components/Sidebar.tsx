@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Home, FolderOpen, FileText, Mail } from 'lucide-react';
 
@@ -29,7 +28,6 @@ const NavItem: React.FC<NavItemProps> = ({ icon: Icon, label, href, active }) =>
   );
 };
 
-// This component manages its own state
 const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
   const [isOpen, setIsOpen] = useState(true); // Set to true initially to show sidebar by default
   const [activeSection, setActiveSection] = useState('home');
@@ -93,7 +91,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
         <div className="flex flex-col h-full p-6">
           {/* Logo/Brand */}
           <div className="mb-10">
-            <br/> <br/>
             <h2 className="text-xl font-bold">Portfolio</h2>
             <p className="text-sm text-muted-foreground">Aspiring ML Engineer</p>
           </div>
@@ -111,8 +108,24 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
             ))}
           </nav>
           
+          {/* Social Media Icons - Horizontally aligned */}
+          <div className="mt-auto pt-6 border-t border-border flex justify-center space-x-4">
+            <a href="https://www.linkedin.com/in/bhaskar-singh-441284215/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-secondary/50 rounded-full">
+              <img src="/linkedin.png" alt="LinkedIn" className="w-6 h-6" />
+            </a>
+            <a href="https://x.com/imSbhaskar" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-secondary/50 rounded-full">
+              <img src="/x.png" alt="Twitter" className="w-6 h-6" />
+            </a>
+            <a href="https://github.com/bhaskar6858" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-secondary/50 rounded-full">
+              <img src="/Github.png" alt="GitHub" className="w-6 h-6" />
+            </a>
+            <a href="https://leetcode.com/u/bhaskar6858/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-secondary/50 rounded-full">
+              <img src="/leetcode.png" alt="LeetCode" className="w-6 h-6" />
+            </a>
+          </div>
+          
           {/* Bottom content */}
-          <div className="mt-auto pt-6 border-t border-border">
+          <div className="mt-6 pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} .All rights reserved.
             </p>
