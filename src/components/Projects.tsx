@@ -1,30 +1,29 @@
-
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import { useProgressiveAnimation } from '../hooks/useScrollAnimation';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A modern e-commerce platform with cart functionality and payment processing',
-    technologies: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-    github: 'https://github.com',
+    title: 'Text Classification',
+    description: 'A hybrid CNN + Bidirectional LSTM (RNN) model to classify news articles into categories.',
+    technologies: ['NLP', 'CNN', 'Bidirectional LSTM', 'Text Vectorization'],
+    image: 'News1.jpg',
+    github: 'https://github.com/bhaskar6858/Text-Classification-using-CNN-and-RNN',
     live: 'https://example.com'
   },
   {
-    title: 'Weather Dashboard',
-    description: 'Real-time weather forecasting application with interactive maps',
-    technologies: ['React', 'Redux', 'OpenWeather API', 'Mapbox'],
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
-    github: 'https://github.com',
+    title: 'New York Taxi Fare Prediction',
+    description: 'Predicting taxi fares using New York taxi dataset',
+    technologies: ['Random Forest', 'Decision Tree', 'Linear Regression', 'SVR'],
+    image: 'nyc.jpg',
+    github: 'https://github.com/bhaskar6858/New-York-Taxi-Fare-Prediction-using-Machine-Learning',
     live: 'https://example.com'
   },
   {
-    title: 'Task Management App',
-    description: 'Productivity tool for managing tasks, projects, and team collaboration',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+    title: 'MLDecode: A Chatbot',
+    description: 'A chatbot that explains machine learning terms and algorithms in simple language',
+    technologies: ['Transformers', 'Tensorflow', 'Fast API', 'HTML-CSS-JS'],
+    image: 'bot.jpg',
     github: 'https://github.com',
     live: 'https://example.com'
   },
@@ -37,18 +36,18 @@ const projects = [
     live: 'https://example.com'
   },
   {
-    title: 'Social Media Dashboard',
-    description: 'Analytics dashboard for monitoring social media performance metrics',
-    technologies: ['React', 'Chart.js', 'Social APIs', 'TailwindCSS'],
-    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+    title: 'Fake News Detection and Sentiment Analysis',
+    description: 'A Deep Learning model that detects fake news articles using NLP and classification techniques, and analysis sentiment',
+    technologies: ['NLP', 'BERT', 'DistilBERT'],
+    image: 'fake.jpg',
     github: 'https://github.com',
     live: 'https://example.com'
   },
   {
-    title: 'Music Streaming App',
-    description: 'Spotify-like application for streaming and discovering music',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
+    title: 'Speech to Text',
+    description: 'A Speech-to-Text tool that transcribes spoken language into text in real-time',
+    technologies: ['Speech Recognition', 'PyAudio', 'DeepSpeech', 'GoogleSpeechAPI'],
+    image: 'text.png',
     github: 'https://github.com',
     live: 'https://example.com'
   },
@@ -70,6 +69,7 @@ const Projects: React.FC = () => {
             <div 
               key={project.title} 
               ref={refs(index)}
+              className="flex flex-col h-full"
             >
               <ProjectCard
                 {...project}

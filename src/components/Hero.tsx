@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
             <br /><br />
             Like Jon Snow is unmatched with a sword on the battlefield, I’m unbeatable with Machine Learning algorithms — mastering not just how they work, but why they work. I understand their mathematical foundations and can bring them to life in Python with precision.
             <br /><br />
-            Whether it's Convolutional Neural Networks that see the world like Aslan himself or Recurrent Neural Networks, LSTMs and Bidirectional RNNs that remember like the Three-Eyed Raven, I engineer intelligent solutions.
+            Whether it's Convolutional Neural Networks that see the world like Aslan or Recurrent Neural Networks, LSTMs and Bidirectional RNNs that remember like the Three-Eyed Raven, I engineer intelligent solutions.
             <br /><br />
             From TensorFlow to Transformers like BERT, I build systems that not only predict but understand. In this ever-evolving realm of algorithms, I don’t just follow trends — I forge my own path.
             <br /><br />
@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
           <div className="relative w-full max-w-md mx-auto preserve-3d animate-float rounded-2xl overflow-hidden shadow-2xl">
             <AspectRatio ratio={3 / 4} className="bg-muted">
               <img
-                src="bhaskar2.jpg"
+                src="bhaskar.jpg"
                 alt="Bhaskar Singh"
                 className="absolute inset-0 w-full h-full object-cover"
               />

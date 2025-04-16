@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 
@@ -25,14 +24,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div 
-      className={`group rounded-xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-md transition-all duration-300 ${
+      className={`group flex flex-col h-full bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ${
         isVisible ? 'animate-scale-in' : 'opacity-0'
       }`}
       style={{ animationDelay: `${delay}s` }}
     >
       {/* Project image */}
       {image && (
-        <div className="relative w-full aspect-video overflow-hidden">
+        <div className="relative w-full aspect-video overflow-hidden flex-shrink-0">
           <img 
             src={image} 
             alt={title} 
@@ -44,10 +43,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
       
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold">{title}</h3>
         
-        <p className="mt-2 text-muted-foreground text-sm min-h-[40px]">
+        <p className="mt-2 text-muted-foreground text-sm flex-grow-1">
           {description}
         </p>
         

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { GraduationCap, Award, ExternalLink } from 'lucide-react';
@@ -78,14 +77,14 @@ const Resume: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              "Java", "Python", "C", "OOP's",
+              "Java", "Python", "OOP's",
               "Artificial Intellifence", "Machine Learning", "Deep Learning", "MLOPS",
-              "Scikit Learn", "TensorFlow", "PyTorch", "MySQL",
+              "Scikit Learn", "Gen AI", "TensorFlow", "Pytorch", "MySQL",
               "Git", "AWS", "HTML5", "CSS"
             ].map((skill) => (
               <div 
                 key={skill}
-                className="bg-card border border-border rounded-lg p-4 text-center hover:bg-secondary/50 transition-colors"
+                className="bg-white border border-gray-200 rounded-xl p-4 text-center text-gray-800 shadow-sm hover:shadow-md transition-shadow"
               >
                 {skill}
               </div>
