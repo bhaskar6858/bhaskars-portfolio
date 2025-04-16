@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* Project image */}
       {image && (
-        <div className="relative w-full aspect-video overflow-hidden flex-shrink-0">
+        <div className="relative w-full aspect-video overflow-hidden flex-shrink-0 rounded-t-xl"> {/* Ensure rounded top corners */}
           <img 
             src={image} 
             alt={title} 
@@ -43,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
       
       {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col flex-grow rounded-b-xl"> {/* Rounded bottom corners */}
         <h3 className="text-xl font-bold">{title}</h3>
         
         <p className="mt-2 text-muted-foreground text-sm flex-grow-1">
