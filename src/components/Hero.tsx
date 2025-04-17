@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             <br /><br />
             I turn your ideas into codes — powered by efficient Data Structures and Algorithms, and clean implementation in Java and Python. With strong Object-Oriented essence, I build software that’s not just functional, but future-ready.
             <br /><br />
-            In a world where technology never stands still, I adapt swiftly to every wave of innovation. My technical and programming skills are designed not just to survive the future — but to age like fine wine, getting better, sharper, and more refined with time.
+            In a world where technology never stands still, I adapt swiftly to every wave of innovation. My technical and programming skills are designed not just to survive the future — but to age like fine wine, just like Daenerys Targaryen Stormborn, getting better, sharper with time.
             <br /><br />
 
             <span className="inline-block animate-fade-in font-semibold text-muted-foreground">
