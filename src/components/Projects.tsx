@@ -17,20 +17,20 @@ const projects = [
     technologies: ['Random Forest', 'Decision Tree', 'Linear Regression', 'SVR'],
     image: 'nyc.jpg',
     github: 'https://github.com/bhaskar6858/New-York-Taxi-Fare-Prediction-using-Machine-Learning',
-    live: 'https://example.com'
+    live: 'https://bhaskar6858-new-york-taxi-fare-prediction-app-pr9hz8.streamlit.app'
   },
   {
-    title: 'MLDecode: A Chatbot',
-    description: 'A chatbot that explains machine learning terms and algorithms in simple language',
-    technologies: ['Transformers', 'Tensorflow', 'Fast API', 'HTML-CSS-JS'],
-    image: 'bot.jpg',
-    github: 'https://github.com',
-    live: 'https://example.com'
+    title: 'Sports Multiclass Image Classification',
+    description: 'CNN and Transfer Learning based project trained on 100 classes of sports, to classify an unseen test image into its equivalent category',
+    technologies: ['Computer Vision', 'CNN', 'Tensorflow', 'Transfer Learning'],
+    image: 'sports.jpg',
+    github: 'https://github.com/bhaskar6858/sports-image-classification',
+    live: 'https://sportsimageclassification.streamlit.app/'
   },
   {
-    title: 'AI Image Generator',
-    description: 'Web application that generates images using AI based on text prompts',
-    technologies: ['React', 'OpenAI API', 'Express', 'MongoDB'],
+    title: 'Audio Dubbing and Voice Patenting',
+    description: 'Can dubb audio into one language to another and can classify audio into real or fake category by patenting real voice sample, thus mitigating deepfake',
+    technologies: ['Transformers', 'Librosa', 'LLM', 'LangChain'],
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
     github: 'https://github.com',
     live: 'https://example.com'
