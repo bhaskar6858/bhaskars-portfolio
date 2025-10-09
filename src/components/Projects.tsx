@@ -31,7 +31,7 @@ const projects = [
     title: 'Audio Dubbing and Voice Patenting',
     description: 'Can dubb audio into one language to another and can classify audio into real or fake category by patenting real voice sample, thus mitigating deepfake',
     technologies: ['Transformers', 'Librosa', 'LLM', 'LangChain'],
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    image: 'audio.jpg',
     github: 'https://github.com',
     live: 'https://example.com'
   },
