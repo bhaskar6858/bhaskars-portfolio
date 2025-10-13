@@ -9,7 +9,7 @@ const projects = [
     technologies: ['NLP', 'CNN', 'Bidirectional LSTM', 'Text Vectorization'],
     image: 'News1.jpg',
     github: 'https://github.com/bhaskar6858/Text-Classification-using-CNN-and-RNN',
-    live: 'https://example.com'
+    live: 'https://news-article-classification-using-deep-learning.streamlit.app'
   },
   {
     title: 'New York Taxi Fare Prediction',
