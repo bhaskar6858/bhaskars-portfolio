@@ -60,7 +60,7 @@ const Resume: React.FC = () => {
                     </span>
                   </div>
                   <h2 className="text-sm text-muted-foreground mb-3">Graphic Era Deemed to be University, Dehradun, Uttarakhand</h2>
-                  <h2 className="text-sm text-muted-foreground mb-3">8.2 CGPA</h2>
+                  <h2 className="text-sm text-muted-foreground mb-3">8.43 CGPA</h2>
                 </div>
               </div>
             </div>

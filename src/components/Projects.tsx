@@ -28,7 +28,7 @@ const projects = [
     live: 'https://sportsimageclassification.streamlit.app/'
   },
   {
-    title: 'Audio Dubbing and Voice Patenting',
+    title: 'Audio Dubbing and Voice Patenting (Under Progress)',
     description: 'Can dubb audio into one language to another and can classify audio into real or fake category by patenting real voice sample, thus mitigating deepfake',
     technologies: ['Transformers', 'Librosa', 'LLM', 'LangChain'],
     image: 'audio.jpg',
@@ -36,11 +36,11 @@ const projects = [
     live: 'https://example.com'
   },
   {
-    title: 'Fake News Detection and Sentiment Analysis',
-    description: 'A Deep Learning model that detects fake news articles using NLP and classification techniques, and analysis sentiment',
-    technologies: ['NLP', 'BERT', 'DistilBERT'],
-    image: 'fake.jpg',
-    github: 'https://github.com',
+    title: 'DSA GenAI Tutor',
+    description: 'A RAG Chatbot which answers Data Structure and Algorithms, by preparing a ChromaDB with DSA md files, mitigates hallucination problem',
+    technologies: ['LLM', 'RAG', 'ChromaDB, Sentence Transformers', 'NLP'],
+    image: 'genai.png',
+    github: 'https://github.com/bhaskar6858/DSA-GenAi-Tutor-RAG-Chatbot-',
     live: 'https://example.com'
   },
   {
