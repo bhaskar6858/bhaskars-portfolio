@@ -81,9 +81,9 @@ const Resume: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               "Java", "Python", "OOP's",
-              "Artificial Intelligence", "Machine Learning", "Deep Learning", "MLOPS",
-              "Scikit Learn", "Gen AI", "TensorFlow", "Pytorch", "MySQL",
-              "Git", "AWS", "HTML5", "CSS"
+              "Artificial Intelligence", "Machine Learning", "Deep Learning", "NLP",
+              "GenAI", "LLM", "RAG", "TensorFlow", "PyTorch", "Database",
+              "MySQL", "HTML5", "CSS"
             ].map((skill) => (
               <div
                 key={skill}
