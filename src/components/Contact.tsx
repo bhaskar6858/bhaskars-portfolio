@@ -8,6 +8,7 @@ import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import SectionReveal from "./ui/SectionReveal";
 
 const Contact: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -38,9 +39,9 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section
+    <SectionReveal
       id="contact"
-      className="py-24 bg-secondary/30 relative z-10 mt-[-4rem]" // Simplified styles for position
+      className="relative isolate min-h-screen px-8 py-28 overflow-hidden" // Simplified styles for position
       ref={ref as React.RefObject<HTMLDivElement>}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -136,7 +137,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 

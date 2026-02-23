@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
 import { useProgressiveAnimation } from '../hooks/useScrollAnimation';
+import SectionReveal from "./ui/SectionReveal";
 
 const projects = [
   {
@@ -55,19 +56,22 @@ const projects = [
 
 const Projects: React.FC = () => {
   const { refs, visibleItems } = useProgressiveAnimation(0.1, 0.2);
-  
+
   return (
-    <section id="projects" className="py-20 bg-secondary/30">
+    <SectionReveal
+      id="projects"
+      className="relative isolate min-h-screen px-8 py-28 overflow-hidden"
+    >
       <div className="container px-4 lg:px-8 mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
         <p className="text-muted-foreground mb-12 max-w-2xl">
           A showcase of my latest work, personal projects, and experiments.
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div 
-              key={project.title} 
+            <div
+              key={project.title}
               ref={refs(index)}
               className="flex flex-col h-full"
             >
@@ -80,7 +84,7 @@ const Projects: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 

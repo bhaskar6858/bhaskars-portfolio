@@ -3,6 +3,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { ArrowDownCircle } from 'lucide-react';
 import { AspectRatio } from './ui/aspect-ratio';
 import { TypeAnimation } from 'react-type-animation';
+import SectionReveal from "./ui/SectionReveal";
 
 const Hero: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -35,17 +36,25 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="mt-4 text-sm leading-snug text-muted-foreground max-w-xl text-balance overflow-hidden">
-            Just like Bran Stark who could see beyond time, I dive deep into the layers of data, extracting hidden patterns and truths through the lens of Machine Learning and Deep Learning. I navigate datasets using tools like Pandas, NumPy, and Scikit-learn. I train models that don't just learn — they adapt.
+            Just like Bran Stark who could see beyond time, I dive deep into the layers of data, extracting hidden patterns and truths through the lens of Machine Learning and Deep Learning. I train models that don't just learn, they adapt.
             <br /><br />
-            Like Jon Snow is unmatched with a sword on the battlefield, I’m unbeatable with Machine Learning algorithms — mastering not just how they work, but why they work. I understand their mathematical foundations and can bring them to life in Python with precision.
+            I build Computer Vision systems leveraging CNNs or VLMs that observe the world like Three Eyed Raven, seeing not just pixels, but context, structure, and meaning across space and time. From images to video streams, I enable machines to explore the world.
             <br /><br />
-            Whether it's Convolutional Neural Networks that see the world like Aslan or Recurrent Neural Networks, LSTMs and Bidirectional RNNs that remember like the Three-Eyed Raven, I engineer intelligent solutions.
+            Like Daemon Targaryen who hallucinates in Harrenhal, I don't let LLM systems hallucinate, I integrate them with RAG pipelines, for forced retrieval from the Knowledge Base.
             <br /><br />
-            From TensorFlow to Transformers like BERT, I build systems that not only predict but understand. In this ever-evolving realm of algorithms, I don’t just follow trends — I forge my own path.
+            Like Jaqen H’ghar, I wear many faces in AI. I am Computer Vision, ML and GenAI Engineer. I am not 'No One', but 'All in One'.
             <br /><br />
-            I turn your ideas into codes — powered by efficient Data Structures and Algorithms, and clean implementation in Java and Python. With strong Object-Oriented essence, I build software that’s not just functional, but future-ready.
+            Arya Stark, who adapts to any environment, I specialize in fine-tuning large models using LoRA, transforming massive pretrained models into efficient, task-specific experts and hardware compatible.
             <br /><br />
-            In a world where technology never stands still, I adapt swiftly to every wave of innovation. My technical and programming skills are designed not just to survive the future — but to age like fine wine, just like Daenerys Targaryen Stormborn, getting better, sharper with time.
+            Like Jon Snow is unmatched with a sword on the battlefield, I’m unbeatable with AI-ML, mastering not just how they work, but why they work. From Gradients to Attention Mechanisms, I understand their mathematical foundations and can bring them to life in Python with precision.
+            <br /><br />
+            Whether it's RNNs, LSTMs, Bidirectional RNNs, that remembers like 'The North Remembers', I engineer intelligent solutions on textual context and NLP.
+            <br /><br />
+            From TensorFlow to Transformers, PyTorch to Prompt Engineering, I build systems that not only predict but understand. In this ever-evolving realm of algorithms, I don’t just follow trends, I forge my own path.
+            <br /><br />
+            I turn your ideas into codes, powered by efficient Data Structures and Algorithms. With strong Object-Oriented essence, I build software that’s not just functional, but future-ready.
+            <br /><br />
+            In a world where technology never stands still, I adapt swiftly to every wave of innovation. My technical and programming skills are designed not just to survive the future, but to age like fine wine, just like Daenerys Targaryen Stormborn, getting better, sharper with time.
             <br /><br />
 
             <span className="inline-block animate-fade-in font-semibold text-muted-foreground">

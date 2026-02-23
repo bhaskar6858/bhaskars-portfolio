@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, FolderOpen, FileText, Mail } from 'lucide-react';
+import { Menu, X, Home, FolderOpen, FileText, Mail, Briefcase } from 'lucide-react';
 
 interface NavItemProps {
   icon: React.ElementType;
@@ -42,11 +42,12 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
   };
 
   const navItems = [
-    { icon: Home, label: 'Home', href: '#home', id: 'home' },
-    { icon: FolderOpen, label: 'Projects', href: '#projects', id: 'projects' },
-    { icon: FileText, label: 'Resume', href: '#resume', id: 'resume' },
-    { icon: Mail, label: 'Contact', href: '#contact', id: 'contact' }
-  ];
+  { icon: Home, label: 'Home', href: '#home', id: 'home' },
+  { icon: Briefcase, label: 'Experience', href: '#experience', id: 'experience' },
+  { icon: FolderOpen, label: 'Projects', href: '#projects', id: 'projects' },
+  { icon: FileText, label: 'Resume', href: '#resume', id: 'resume' },
+  { icon: Mail, label: 'Contact', href: '#contact', id: 'contact' }
+];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +89,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onStateChange }) => {
           <div className="mb-10">
             <br /> <br />
             <h2 className="text-xl font-bold">Portfolio</h2>
-            <p className="text-sm text-muted-foreground">Aspiring ML Engineer</p>
+            <p className="text-sm text-muted-foreground">Robotics Computer Vision Intern at Airbus</p>
           </div>
 
           <nav className="space-y-1">

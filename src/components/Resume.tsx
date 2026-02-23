@@ -2,13 +2,14 @@ import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
+import SectionReveal from "./ui/SectionReveal";
 
 const Resume: React.FC = () => {
   const { ref: educationRef, isVisible: educationVisible } = useScrollAnimation(0.1);
   const { ref: skillsRef, isVisible: skillsVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="resume" className="pt-4 pb-20"> {/* Adjusted scroll behavior */}
+    <SectionReveal id="resume" className="relative isolate min-h-screen px-8 py-28 overflow-hidden"> {/* Adjusted scroll behavior */}
       <div className="container px-4 lg:px-8 mx-auto">
         <div className="flex flex-col items-start mb-12">
           <div className="text-left mb-8">
@@ -95,7 +96,7 @@ const Resume: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 

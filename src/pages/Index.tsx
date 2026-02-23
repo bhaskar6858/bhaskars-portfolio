@@ -1,11 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
+import Experience from "../components/Experience";
 import Projects from '../components/Projects';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';
 import Sidebar from '../components/Sidebar';
 import CustomCursor from '../components/CustomCursor';
+
 
 // This component doesn't use SidebarProvider since Sidebar manages its own state
 const Index: React.FC = () => {
@@ -36,6 +38,7 @@ const Index: React.FC = () => {
       {/* Main content - full width when sidebar is collapsed */}
       <main className={`flex-1 transition-all duration-300 ${sidebarState === 'expanded' ? 'lg:ml-64' : 'ml-0'}`}>
         <Hero />
+        <Experience />
         <Projects />
         <Resume />
         <Contact />
